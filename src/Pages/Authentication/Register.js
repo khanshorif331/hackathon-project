@@ -23,7 +23,7 @@ const Register = () => {
 	}
 
 	return (
-		<section className="sm:mt-[129px] mt-[80px]">
+		<section className="">
 			<div className="font-family-karla">
 				<div className="w-full flex flex-wrap">
 					<div className="w-full md:w-1/2 flex flex-col border-r-2 border-r-gray-500">
