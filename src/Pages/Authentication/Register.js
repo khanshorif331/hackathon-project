@@ -1,10 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { MdOutlineVisibilityOff, MdOutlineVisibility } from 'react-icons/md'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md'
 
-const Login = () => {
+const Register = () => {
 	const [showPassword, setShowPassword] = React.useState(false)
 
 	const {
@@ -13,26 +12,61 @@ const Login = () => {
 		handleSubmit,
 		reset,
 	} = useForm()
-	// const navigate = useNavigate()
-	// let location = useLocation()
-	// let from = location.state?.from?.pathname || '/'
 
-	const handleLogin = data => {
+	// const navigate = useNavigate()
+	// let location = useLocation();
+	// let from = location.state?.from?.pathname || "/";
+
+	const handleRegister = data => {
 		console.log(data)
 		reset()
 	}
 
 	return (
-		<section className="">
-			<div className="bg-white font-family-karla">
-				<div className="w-full flex flex-wrap flex-row-reverse">
-					<div className="w-full md:w-1/2 flex flex-col border-l-2 border-l-gray-500">
+		<section className="sm:mt-[129px] mt-[80px]">
+			<div className="font-family-karla">
+				<div className="w-full flex flex-wrap">
+					<div className="w-full md:w-1/2 flex flex-col border-r-2 border-r-gray-500">
 						<div className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-							<p className="text-center text-3xl">Login Here!</p>
+							<p className="text-center text-3xl">Register Now!</p>
 							<form
-								onSubmit={handleSubmit(handleLogin)}
+								onSubmit={handleSubmit(handleRegister)}
 								className="flex flex-col pt-3 md:pt-8"
 							>
+								<div className="flex flex-col pt-4">
+									<label htmlFor="name" className="text-lg">
+										Name
+									</label>
+									<input
+										{...register('name', {
+											required: {
+												value: true,
+												message: 'Name is Required',
+											},
+											minLength: {
+												value: 3,
+												message: 'Must be 3 character or longer',
+											},
+										})}
+										type="text"
+										id="name"
+										placeholder="John Smith"
+										className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
+									/>
+									<label>
+										{errors.name?.type === 'required' && (
+											<p className="text-red-600 text-sm font-semibold">
+												{errors.name.message}
+											</p>
+										)}
+										{errors.name?.type === 'minLength' && (
+											<p className="text-red-600 text-sm font-semibold">
+												{errors.name.message}
+											</p>
+										)}
+									</label>
+								</div>
+
 								<div className="flex flex-col pt-4">
 									<label htmlFor="email" className="text-lg">
 										Email
@@ -169,7 +203,7 @@ const Login = () => {
 
 								<input
 									type="submit"
-									value="Login"
+									value="Register"
 									className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8 cursor-pointer"
 								/>
 							</form>
@@ -182,10 +216,10 @@ const Login = () => {
 								<p>
 									Already have an account?{' '}
 									<Link
-										to="/register"
+										to="/login"
 										className="underline font-semibold"
 									>
-										Register here.
+										Log in here.
 									</Link>
 								</p>
 							</div>
@@ -195,7 +229,7 @@ const Login = () => {
 					<div className="w-1/2">
 						<img
 							className="object-cover w-full hidden md:block"
-							src="https://www.hamyarit.com/wp-content/uploads/2019/02/programmers-1.gif-hamyarit.com-programmers-1.gif"
+							src="https://thumbs.dreamstime.com/b/sign-page-interface-concept-user-login-form-ui-new-account-registration-protection-information-modern-flat-illustration-sign-202242889.jpg"
 							alt="Background"
 						/>
 					</div>
@@ -205,4 +239,4 @@ const Login = () => {
 	)
 }
 
-export default Login
+export default Register
