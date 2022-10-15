@@ -17,6 +17,7 @@ const Navbar = () => {
 							<img src="https://placeimg.com/80/80/people" alt="" />
 						</div>
 					</label>
+
 					<ul
 						tabindex="0"
 						class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"

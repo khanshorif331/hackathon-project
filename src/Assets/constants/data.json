@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "post": "Hello World",
+        "sender": "John Doe",
+        "receiver": "Jane",
+        "description": "This is a test post",
+        "comments":"Awesome post",
+        "Date":"2019-01-01"
+    },
+    {
+        "id": "2",
+        "post": "Hello World",
+        "sender": "John Doe",
+        "receiver": "Jane",
+        "description": "This is a test post",
+        "comments":"Awesome post",
+        "Date":"2019-01-01"
+    },
+    {
+        "id": "3",
+        "post": "Hello World",
+        "sender": "John Doe",
+        "receiver": "Jane",
+        "description": "This is a test post",
+        "comments":"Awesome post",
+        "Date":"2019-01-01"
+    }
+]
