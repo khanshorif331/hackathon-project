@@ -3,6 +3,7 @@ import Data from '../../../Assets/constants/files.json'
 const SharedFiles = () => {
 	return (
 		<div className="p-4">
+			{/* --------------this is the headingg ----------- */}
 			<div>
 				<h1 className="text-2xl">File</h1>
 			</div>
